@@ -26,10 +26,10 @@ app.post('/register', (req, res) => {
     }
     else {
         if (req.body.pool == 'option-1'){
-            API_URL = "https://api.foxypool.io/api/v3/chia"
+            API_URL = "https://api.foxypool.io/api/v3/chia-og"
         }
         else if (req.body.pool == 'option-2'){
-            API_URL = "https://api.foxypool.io/api/v3/chia-og"
+            API_URL = "https://api.foxypool.io/api/v3/chia"
         }
         userAuth = req.body.publicKey
         isRegistered = true
@@ -41,14 +41,21 @@ app.post('/register', (req, res) => {
 app.get('/panel', (req, res) => {
     if (isRegistered){
     axios.get(API_URL + `/account/${userAuth}`)
-    .then((response) => {
-        res.render("index.ejs", { 
-            data: JSON.stringify(response.data),
-            userAuth: userAuth
+    .then(async (response) => {
+        let balance = await anxios.get(`https://xchscan.com/api/account/balance?address=${response.data.payoutAddress}`)
+        res.render("index.ejs", {
+            data: response.data,
+            userAuth: userAuth,
+            balance: balance
         })
     })
     .catch((error) => {
-        res.render("index.ejs", { data: JSON.stringify(error.data), userAuth: userAuth })
+        if (error.response){
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+        }
+        res.render("index.ejs", { data: error, userAuth: userAuth, balance: "undefined" })
     })
     }
     else {

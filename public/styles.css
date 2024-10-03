@@ -1,0 +1,47 @@
+h1 {
+    margin: 0px;
+}
+
+body {
+    margin: 0px !important;
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+nav > #publicKey {
+    max-width: 40%;
+    white-space: nowrap;
+    width: 100%;                   /* IE6 needs any width */
+    overflow: hidden;              /* "overflow" value must be different from  visible"*/ 
+    -o-text-overflow: ellipsis;    /* Opera < 11*/
+    text-overflow:    ellipsis;    /* IE, Safari (WebKit), Opera >= 11, FF > 6 */
+    
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+
+.card {
+    padding: 40px;
+    border: 2px solid gray;
+    border-radius: 40px;
+}
+
+.card > h1{
+    border-bottom: 2px dashed gray;
+}

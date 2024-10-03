@@ -1,6 +1,24 @@
 <%- include('header.ejs') %>
 
-<%= data %> 
-<%= userAuth %>
+<nav>
+    <div id="logo">CHIA MONITOR</div>
+    <div id="publicKey" alt="<%= userAuth %>">Public key: <%= userAuth %></div>
+</nav>
+
+<div id="content">
+    <div class="card">
+        <h1>Welcome back, <strong><%= data.name %></strong></h1>
+        <div>
+            Balance: <%= balance %>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 <%- include('footer.ejs') %>
