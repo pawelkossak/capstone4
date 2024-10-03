@@ -1,0 +1,39 @@
+body { 
+    height: 100vh;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: "Overpass", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    width: 1px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: zoom 20s alternate infinite;
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(1)
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+form > div {
+    margin-bottom: 5px;
+}

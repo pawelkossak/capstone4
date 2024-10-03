@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Data filling</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="main">     
+    </div>
+    <form action="/register">
+        <h1>Input your data</h1>
+        <div>
+            <span>Pick your pool: </span>
+            <select name="pool" id="select-1727981919776">
+                <option value="option-1" selected="true" id="select-1727981919776-0">CHIA</option>
+                <option value="option-2" id="select-1727981919776-1">CHIA-OG</option>
+            </select>
+        </div>
+        <div>
+            <span>Input your public key:</span>
+            <input type="text" name="publicKey">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+
+
+<script src="./background.js"></script>
 </body>
 </html>
