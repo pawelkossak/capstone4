@@ -42,11 +42,11 @@ app.get('/panel', (req, res) => {
     if (isRegistered){
     axios.get(API_URL + `/account/${userAuth}`)
     .then(async (response) => {
-        let balance = await anxios.get(`https://xchscan.com/api/account/balance?address=${response.data.payoutAddress}`)
+        let balance = await axios.get(`https://xchscan.com/api/account/balance?address=${response.data.payoutAddress}`)
         res.render("index.ejs", {
             data: response.data,
             userAuth: userAuth,
-            balance: balance
+            balance: balance.data.xch
         })
     })
     .catch((error) => {

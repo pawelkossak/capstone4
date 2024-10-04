@@ -1,21 +1,27 @@
 <%- include('header.ejs') %>
 
 <nav>
-    <div id="logo">CHIA MONITOR</div>
+    <div id="logo">FOXYPOOL MONITOR</div>
     <div id="publicKey" alt="<%= userAuth %>">Public key: <%= userAuth %></div>
 </nav>
 
 <div id="content">
     <div class="card">
+        <div class="card-title">
         <h1>Welcome back, <strong><%= data.name %></strong></h1>
-        <div>
-            Balance: <%= balance %>
+        <% if (new Date() - new Date(data.lastAcceptedPartialAt) > 86400000) { %>
+            <div style="height: 40px; width: 40px; border-radius: 50%; background-color: red;"></div>
+        <% } else { %>
+            <div style="height: 40px; width: 40px; border-radius: 50%; background-color: greenyellow;"></div>
+        <% } %>
+        </div>
+        <div class="info">
+            <strong>Balance:</strong> <%= balance %> XCH
+            <p><strong>Payout address:</strong> <%= data.payoutAddress %></p>
         </div>
     </div>
 </div>
-
-
-
+<p><%=  %></p>
 
 
 
